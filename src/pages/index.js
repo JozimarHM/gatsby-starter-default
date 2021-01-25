@@ -7,11 +7,11 @@ import SEO from "../components/seo"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Home" lang="pt-BR"/>
     <h1>Oi Pessoal</h1>
     <p>Bem Vindo ao seu novo site Gatsby.</p>
     <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
+    <div>
       <Image />
     </div>
     <Link to="/page-2/">Go to page 2</Link> <br />
