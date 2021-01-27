@@ -7,13 +7,20 @@ import SEO from "../components/seo"
 
 const IndexPage = () => (
   <Layout>
+  <script dangerouslySetInnerHTML = {{ __html: `scripts.js`}} />
     <SEO title="Home" lang="pt-BR"/>
-    <h1>Oi Pessoal</h1>
-    <p>Bem Vindo ao seu novo site Gatsby.</p>
-    <p>Now go build something great.</p>
-    <div>
-      <Image />
-    </div>
+         <header className="init"></header>
+               
+            <header/>
+               <br/><br/><br/>
+               <form  id="pagelogin" class="box" action="/start" method="POST">
+                  <h1>Login</h1>
+                  <input type="text"  autocomplete="username" placeholder="Nome de Usuário"/>
+                  <input type="password"  autocomplete="current-password" placeholder="Senha"/>
+                  <input type="submit" name="submit" value="Enviar"/>
+                  Você também pode ir <a href="/inline">aqui</a>
+               </form>
+
     <Link to="/page-2/">Go to page 2</Link> <br />
     <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
   </Layout>
