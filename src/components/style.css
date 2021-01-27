@@ -67,7 +67,7 @@
   color: #007bff !important;
 }
 .banner{
-  background: url("bannerblack.png") no-repeat;
+  background: url("/images/bannerblack.png") no-repeat;
   height: 90vh;
   background-size: cover;
   background-position: center;

@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Gatsby Inicial Padrão`,
     description: `Comece seu próximo grande projeto Gatsby com este iniciador padrão. Este iniciador barebones vem com os principais arquivos de configuração do Gatsby de que você pode precisar.`,
-    author: `@gatsbyjs`,
+    author: `Jozimar`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -24,7 +24,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // Este caminho é relativo à raiz do site.
+        icon: `src/images/jhsoftwareBranco.png`, // Este caminho é relativo à raiz do site.
       },
     },
      // este plugin (opcional) ativa a funcionalidade Progressive Web App + Offline

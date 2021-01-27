@@ -9,16 +9,14 @@ const IndexPage = () => (
   <Layout>
   <script dangerouslySetInnerHTML = {{ __html: `scripts.js`}} />
     <SEO title="Home" lang="pt-BR"/>
-         <header id="toggle">
-           
-         </header>
+         <header id="toggle"></header>
                <br/><br/><br/>
                <form  id="pagelogin" class="box" action="/start" method="POST">
                   <h1>Login</h1>
                   <input type="text"  autocomplete="username" placeholder="Nome de Usuário"/>
                   <input type="password"  autocomplete="current-password" placeholder="Senha"/>
                   <input type="submit" name="submit" value="Enviar"/>
-                  Você também pode ir <a href="/inline">aqui</a>
+                  Você também pode ir <Link href="/inline">aqui</Link>
                </form>
 
     <Link to="/page-2/">Go to page 2</Link> <br />
