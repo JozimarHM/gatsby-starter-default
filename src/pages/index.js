@@ -9,9 +9,9 @@ const IndexPage = () => (
   <Layout>
   <script dangerouslySetInnerHTML = {{ __html: `scripts.js`}} />
     <SEO title="Home" lang="pt-BR"/>
-         <header className="init"></header>
-               
-            <header/>
+         <header id="toggle">
+           
+         </header>
                <br/><br/><br/>
                <form  id="pagelogin" class="box" action="/start" method="POST">
                   <h1>Login</h1>

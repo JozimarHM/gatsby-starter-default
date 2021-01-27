@@ -2192,7 +2192,7 @@ Paho.MQTT = (function (global) {
     function onMessageArrived(message) {
         var mens = message.payloadString;
         console.log("Uma mensagem Recebida:"+mens);
-    //   let a = document.querySelector("#toggle");
-    //   a.innerHTML = mens;
+      let a = document.querySelector("#toggle");
+      a.innerHTML = mens;
 
     }

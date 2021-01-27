@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html class="login" lang="pt-BR">
+<meta content="text/html">
+<meta charset="UTF-8">
+<meta name="description" content="Pagina para controle de um sistema Led edereçável">
+<!-- <meta http-equiv="refresh" content="15"> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Jozimar Henriques Moreto">
+   <head>
+   <link href="./Jhsoftware.ico" type="image/x-icon" rel="shortcut icon"/>
+   <link href="./style.css" rel="stylesheet"/>
+   </head>
+      <body class="login">
+         <!--    <center>
+            <header class="init">
+      
+               <img class="logo" id="logotipo" src="./JhsoftwareBranco.png" width="150" height="152" alt="LogoRegistrado"/>
+               <title>Iluminação do Carro</title>
+               <h1>Iluminação do Carro</h1></br>
+               <p style="font-size:48px">
+               &#128664;      &#128663;      &#128664;
+               </p>  
+               <cite>Criado e idealizado por Jozimar H. Moreto</cite>
+               
+            </header>
+            </center> -->
+            <center>
+               </br></br></br>
+               <!-- <form  class="box" action="/login" method="POST"></form> -->
+               <form  id="pagelogin" class="box" action="/start" method="POST">
+                  <h1>Login</h1>
+                  <input type="text"  autocomplete="username" placeholder="Nome de Usuário">
+                  <input type="password"  autocomplete="current-password" placeholder="Senha">
+                  <input type="submit" name="submit" value="Enviar">
+                  Você também pode ir <a href="/inline">aqui</a>
+               </form>
+            </center>
+            <script src="mqttws31.js" type="text/javascript"></script>
+
+            <script type="text/javascript">
+
+               var host_config = 'driver.cloudmqtt.com';
+               var port_config = 38984;
+               var client_id_config = "Jozimar_" + parseInt(Math.random() * 100, 10);
+             
+               // Crie uma instância do cliente
+               client = new Paho.MQTT.Client(host_config, port_config,client_id_config);
+               //Exemplo de Cliente = new Paho.MQTT.Client("m11.cloudmqtt.com", 32903, "web_" + parseInt(Math.random() * 100, 10));
+             
+               // definir manipuladores de retorno de chamada
+               client.onConnectionLost = onConnectionLost;
+               client.onMessageArrived = onMessageArrived;
+               var options = {
+                 useSSL: true,
+                 userName: "exdueezw",
+                 password: "IEOa8zB00iim",
+                 onSuccess:onConnect,
+                 onFailure:doFail
+               }
+             
+               // conectar o cliente
+               client.connect(options);
+             
+               // chamado quando o cliente se conecta
+               function onConnect() {
+                 // Assim que a conexão for estabelecida, faça uma assinatura e envie uma mensagem.
+                 console.log("Conectado");
+                 client.subscribe("/");
+                 client.subscribe("#");
+                 message = new Paho.MQTT.Message("aguardando Login");
+                 message.destinationName = "/";
+                 client.send(message);
+               }
+             
+               function doFail(e){
+                 console.log(e);
+               }
+             
+               // chamado quando o cliente perde a conexão
+               function onConnectionLost(responseObject) {
+                 if (responseObject.errorCode !== 0) {
+                   console.log("onConnectionLost:"+responseObject.errorMessage);
+                 }
+               }
+             
+               // chamado quando chega uma mensagem
+               function onMessageArrived(message) {
+                 var mens = message.payloadString;
+                 console.log("Uma mensagem Recebida:"+mens);
+               //   let a = document.querySelector("#toggle");
+               //   a.innerHTML = mens;
+           
+               }
+            </script>
+      </body>
+</html>
